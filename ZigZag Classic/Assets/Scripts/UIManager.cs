@@ -42,10 +42,17 @@ public class UIManager : MonoBehaviour
         score.text = PlayerPrefs.GetInt("score").ToString();
         gameOverHighScore.text = PlayerPrefs.GetInt("highScore").ToString();
         gameOverPanel.SetActive(true);
+
+        Invoke("LateShow", 1f);
     }
 
     public void Reset()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void LateShow()
+    {
+        UnityAdManager.instance.ShowAd();
     }
 }

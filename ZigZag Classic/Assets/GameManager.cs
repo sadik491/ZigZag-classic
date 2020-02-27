@@ -29,7 +29,6 @@ public class GameManager : MonoBehaviour
         
         ScoreManager.instence.StopScore();
         UIManager.instence.GameOver();
-        //UnityAdManager.instance.ShowAd();
 
     }
 }

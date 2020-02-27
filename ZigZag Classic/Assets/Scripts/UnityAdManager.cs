@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.Advertisements;
 
 public class UnityAdManager : MonoBehaviour
@@ -23,7 +24,9 @@ public class UnityAdManager : MonoBehaviour
     void Start()
     {
         Advertisement.Initialize(gameId);
-        
+        StartCoroutine(ShowBannerWhenReady());
+        Advertisement.Banner.SetPosition(BannerPosition.BOTTOM_CENTER);
+
     }
 
     void Update()
@@ -31,11 +34,28 @@ public class UnityAdManager : MonoBehaviour
         
     }
 
-    public void ShowAd()
+    public void ShowVideoAd()
     {
         if (Advertisement.IsReady("video"))
         {
             Advertisement.Show("video");
         }
+    }
+
+    public void ShowRewardedVideoAd()
+    {
+        if (Advertisement.IsReady("rewardedVideo"))
+        {
+            Advertisement.Show("rewardedVideo");
+        }
+    }
+
+    IEnumerator ShowBannerWhenReady()
+    {
+        while (!Advertisement.IsReady("bannerPlacement"))
+        {
+            yield return new WaitForSeconds(0.5f);
+        }
+        Advertisement.Banner.Show("bannerPlacement");
     }
 }

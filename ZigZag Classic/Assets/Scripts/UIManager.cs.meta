@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 4a06d8fbd70cf28419f768fa68f3a7f2
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - welcomePanel: {fileID: 3159389458470068825, guid: 49c4b53490ddc964a8439fb6d86ada16,
+      type: 3}
+  - gameOverPanel: {fileID: 7980872099910232396, guid: be4d4420b3ab94147b370078142c7aea,
+      type: 3}
+  - tapText: {fileID: 4519016445801089154, guid: 135b365dc210b3a408b15c95c781b678,
+      type: 3}
+  - score: {instanceID: 0}
+  - welcomeHighScore: {instanceID: 0}
+  - gameOverHighScore: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

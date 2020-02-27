@@ -596,16 +596,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ball
       objectReference: {fileID: 0}
-    - target: {fileID: 242740107985253570, guid: 841ee55e34e4d7d4a8b24b128af4d125,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 242740107985253570, guid: 841ee55e34e4d7d4a8b24b128af4d125,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 112
-      objectReference: {fileID: 0}
     - target: {fileID: 242740107985253582, guid: 841ee55e34e4d7d4a8b24b128af4d125,
         type: 3}
       propertyPath: m_LocalPosition.x

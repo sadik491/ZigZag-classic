@@ -9,6 +9,8 @@ public class BallControl : MonoBehaviour
     bool started;
     public GameObject partical;
 
+    public AudioClip breakSound;
+
     void Start()
     {
         started = false;
@@ -48,11 +50,6 @@ public class BallControl : MonoBehaviour
             }
 
         }
-        
-
-        
-
-
 
     }
 
@@ -72,6 +69,7 @@ public class BallControl : MonoBehaviour
     {
         if (col.gameObject.tag == "Daimond")
         {
+            AudioSource.PlayClipAtPoint(breakSound, Camera.main.transform.position);
             GameObject part = Instantiate(partical, col.transform.position, Quaternion.identity);
             Destroy(col.gameObject);
             Destroy(part, 1f);

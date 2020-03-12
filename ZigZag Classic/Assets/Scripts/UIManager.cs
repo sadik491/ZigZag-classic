@@ -42,7 +42,7 @@ public class UIManager : MonoBehaviour
         score.text = PlayerPrefs.GetInt("score").ToString();
         gameOverHighScore.text = PlayerPrefs.GetInt("highScore").ToString();
         gameOverPanel.SetActive(true);
-        Invoke("LateShowRewardedVideo", 1f);
+        Invoke("LateShowRewardedVideo", 2f);
     }
 
     public void Reset()

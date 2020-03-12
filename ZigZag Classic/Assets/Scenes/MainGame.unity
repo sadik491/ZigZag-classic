@@ -184,6 +184,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 242740107836694180}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &426502759 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 242740107985253583, guid: 841ee55e34e4d7d4a8b24b128af4d125,
+    type: 3}
+  m_PrefabInstance: {fileID: 242740107836694180}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426502757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44830f6a875715c429b0e7f609fd9f9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &430396637
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,6 +790,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 430396641}
     m_Modifications:
+    - target: {fileID: 1800568381053250292, guid: 49c4b53490ddc964a8439fb6d86ada16,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -233
+      objectReference: {fileID: 0}
+    - target: {fileID: 1800568381053250292, guid: 49c4b53490ddc964a8439fb6d86ada16,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -650.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1800568381053250292, guid: 49c4b53490ddc964a8439fb6d86ada16,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 19.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1800568381053250292, guid: 49c4b53490ddc964a8439fb6d86ada16,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 20.3
+      objectReference: {fileID: 0}
     - target: {fileID: 3159389458470068824, guid: 49c4b53490ddc964a8439fb6d86ada16,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -888,15 +920,45 @@ PrefabInstance:
       propertyPath: m_Name
       value: WelcomePanel
       objectReference: {fileID: 0}
-    - target: {fileID: 3159389458470068825, guid: 49c4b53490ddc964a8439fb6d86ada16,
+    - target: {fileID: 5089633761080516978, guid: 49c4b53490ddc964a8439fb6d86ada16,
         type: 3}
-      propertyPath: m_IsActive
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3159389459329083085, guid: 49c4b53490ddc964a8439fb6d86ada16,
+    - target: {fileID: 5089633761080516978, guid: 49c4b53490ddc964a8439fb6d86ada16,
         type: 3}
-      propertyPath: m_IsActive
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089633761080516978, guid: 49c4b53490ddc964a8439fb6d86ada16,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089633761080516978, guid: 49c4b53490ddc964a8439fb6d86ada16,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 426502759}
+    - target: {fileID: 5089633761080516978, guid: 49c4b53490ddc964a8439fb6d86ada16,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SoundOn
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089633761080516978, guid: 49c4b53490ddc964a8439fb6d86ada16,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089633761080516978, guid: 49c4b53490ddc964a8439fb6d86ada16,
+        type: 3}
+      propertyPath: m_IsOn
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089633761080516978, guid: 49c4b53490ddc964a8439fb6d86ada16,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49c4b53490ddc964a8439fb6d86ada16, type: 3}
@@ -990,11 +1052,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TapText
-      objectReference: {fileID: 0}
-    - target: {fileID: 4519016445801089154, guid: 135b365dc210b3a408b15c95c781b678,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4519016445801089155, guid: 135b365dc210b3a408b15c95c781b678,
         type: 3}

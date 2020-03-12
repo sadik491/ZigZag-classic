@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 
 public class BallControl : MonoBehaviour
@@ -8,20 +9,32 @@ public class BallControl : MonoBehaviour
     bool gameOver;
     bool started;
     public GameObject partical;
+    public AudioSource audioSource;
 
     public AudioClip breakSound;
+    public bool soundButton;
+
+
+    public static BallControl instence;
+
+    void Awake()
+    {
+        if (instence == null)
+        {
+            instence = this;
+        }
+    }
 
     void Start()
     {
         started = false;
-        gameOver = false;
+        soundButton = true;
         UIManager.instence.Welcome();
     }
 
    
     void Update()
     {
-        
 
         if (!Physics.Raycast(transform.position, Vector3.down, 1f))
         {
@@ -38,16 +51,16 @@ public class BallControl : MonoBehaviour
             Touch touch = Input.GetTouch(0);
             if (!started)
             {
-                rb.velocity = new Vector3(0, 0, speed * Time.deltaTime);
-                started = true;
-                GameManager.instence.StartGame();
+                    rb.velocity = new Vector3(0, 0, speed * Time.deltaTime);
+                    started = true;
+                    GameManager.instence.StartGame();
             }
-
             if (touch.phase == TouchPhase.Began && !gameOver)
             {
-
-                SwitchDirection();
+                    SwitchDirection();
             }
+
+            
 
         }
 
@@ -65,11 +78,25 @@ public class BallControl : MonoBehaviour
         }
     }
 
+    
+    public void SoundOn(bool isOn)
+    {
+        audioSource.enabled = isOn;
+        soundButton = isOn;
+        
+    }
+
     void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "Daimond")
         {
-            AudioSource.PlayClipAtPoint(breakSound, Camera.main.transform.position);
+            if (soundButton == true)
+            {
+                AudioSource.PlayClipAtPoint(breakSound, Camera.main.transform.position);
+            }
+            
+            
+            
             GameObject part = Instantiate(partical, col.transform.position, Quaternion.identity);
             Destroy(col.gameObject);
             Destroy(part, 1f);

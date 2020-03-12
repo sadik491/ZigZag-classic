@@ -125,10 +125,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 242740107985253570}
-  speed: 600
+  speed: 500
   partical: {fileID: 7229819473075181718, guid: ec435e0a86ec43c4ba613ad7f5fa5a6f,
     type: 3}
+  audioSource: {fileID: 2876423044010028294}
   breakSound: {fileID: 8300000, guid: a37d2702516ca024f86a7ff6bacb7f97, type: 3}
+  soundButton: 0
 --- !u!82 &2876423044010028294
 AudioSource:
   m_ObjectHideFlags: 0

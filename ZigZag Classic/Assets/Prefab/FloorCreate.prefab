@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floor: {fileID: 6435008569898538081, guid: 316ef3b1968b2594dadbcb66a418ffce, type: 3}
-  diamond: {fileID: 3042789678724458006, guid: f2c74e6d0cac43a4d8601dce7398a1ea, type: 3}
+  diamond: {fileID: 4000010140368820, guid: c3c0707254334a64ca8198f7486e977d, type: 3}

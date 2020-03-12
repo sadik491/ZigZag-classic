@@ -30,6 +30,7 @@ public class BallControl : MonoBehaviour
         started = false;
         soundButton = true;
         UIManager.instence.Welcome();
+        GetComponent<MeshRenderer>().material.color = new Color(Random.value, Random.value, Random.value); ;
     }
 
    

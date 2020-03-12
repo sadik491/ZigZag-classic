@@ -28,11 +28,6 @@ public class UnityAdManager : MonoBehaviour
 
     }
 
-    void Update()
-    {
-        
-    }
-
     public void ShowVideoAd()
     {
         if (Advertisement.IsReady("video"))

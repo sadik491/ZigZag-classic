@@ -34,12 +34,14 @@ public class UIManager : MonoBehaviour
     public void Welcome()
     {
         welcomeHighScore.text = PlayerPrefs.GetInt("highScore").ToString();
+        
     }
 
     public void GameOver()
     {
         scoreUpdate.SetActive(false);
         score.text = PlayerPrefs.GetInt("score").ToString();
+        
         gameOverHighScore.text = PlayerPrefs.GetInt("highScore").ToString();
         gameOverPanel.SetActive(true);
         Invoke("LateShowRewardedVideo", 2f);

@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
-
+using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instence;
 
     public int score;
     public int highScore;
+    public Text scoreUpdateText;
+
 
     void Awake()
     {
@@ -24,6 +26,7 @@ public class ScoreManager : MonoBehaviour
     public void IncrementScore()
     {
         score += 1;
+        scoreUpdateText.text = score.ToString();
     }
 
     public void StartScore()
@@ -33,6 +36,7 @@ public class ScoreManager : MonoBehaviour
 
     public void StopScore()
     {
+        
         CancelInvoke("IncrementScore");
         PlayerPrefs.SetInt("score", score);
 

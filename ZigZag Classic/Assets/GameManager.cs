@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     {
         UIManager.instence.GameStart();
         ScoreManager.instence.StartScore();
+        GameObject.Find("FloorCreate").GetComponent<FloorCreator>().StartRandomFloor();
     }
 
     public void GameOver()
@@ -29,6 +30,7 @@ public class GameManager : MonoBehaviour
         
         ScoreManager.instence.StopScore();
         UIManager.instence.GameOver();
+        gameOver = true;
 
     }
 }

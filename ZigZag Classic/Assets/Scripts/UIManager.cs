@@ -26,9 +26,9 @@ public class UIManager : MonoBehaviour
     public void GameStart()
     {
         tapText.SetActive(false);
-        scoreUpdate.SetActive(true);
-        scoreUpdate.GetComponent<Text>().text = PlayerPrefs.GetInt("score").ToString("0");
         welcomePanel.GetComponent<Animator>().Play("WelcomePanal");
+        scoreUpdate.SetActive(true);
+
     }
 
     public void Welcome()

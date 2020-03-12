@@ -18,12 +18,17 @@ public class FloorCreator : MonoBehaviour
             RandomFloor();
         }
 
-        InvokeRepeating("RandomFloor", 2f, .2f);
+        
+    }
+
+    public void StartRandomFloor()
+    {
+        InvokeRepeating("RandomFloor", 2f, .2f); 
     }
 
     void Update()
     {
-        if (Camera.main.GetComponent<FollowCam>().gameOver)
+        if (GameManager.instence.gameOver == true)
         {
             CancelInvoke("RandomFloor");
         }

@@ -460,6 +460,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   highScore: 0
+  scoreUpdateText: {fileID: 2066143471}
 --- !u!1 &1662462710 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3159389458470068825, guid: 49c4b53490ddc964a8439fb6d86ada16,
@@ -552,7 +553,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 000
+  m_Text: 00
 --- !u!222 &2066143472
 CanvasRenderer:
   m_ObjectHideFlags: 0

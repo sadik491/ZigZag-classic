@@ -34,7 +34,6 @@ public class UIManager : MonoBehaviour
     public void Welcome()
     {
         welcomeHighScore.text = PlayerPrefs.GetInt("highScore").ToString();
-        Invoke("LateShowVideo", 5f);
     }
 
     public void GameOver()
@@ -43,18 +42,12 @@ public class UIManager : MonoBehaviour
         score.text = PlayerPrefs.GetInt("score").ToString();
         gameOverHighScore.text = PlayerPrefs.GetInt("highScore").ToString();
         gameOverPanel.SetActive(true);
-
         Invoke("LateShowRewardedVideo", 1f);
     }
 
     public void Reset()
     {
         SceneManager.LoadScene(0);
-    }
-
-    public void LateShowVideo()
-    {
-        UnityAdManager.instance.ShowVideoAd();
     }
 
     public void LateShowRewardedVideo()

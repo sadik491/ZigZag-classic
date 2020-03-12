@@ -5,7 +5,6 @@ using UnityEngine.Advertisements;
 public class UnityAdManager : MonoBehaviour
 {
     string gameId = "3486957";
-    //bool testMode = false;
     public static UnityAdManager instance;
 
     void Awake()
@@ -44,10 +43,28 @@ public class UnityAdManager : MonoBehaviour
 
     public void ShowRewardedVideoAd()
     {
-        if (Advertisement.IsReady("rewardedVideo"))
+        if (PlayerPrefs.HasKey("adAccount"))
         {
-            Advertisement.Show("rewardedVideo");
+            if (PlayerPrefs.GetInt ("adAccount") == 3)
+            {
+                if (Advertisement.IsReady("rewardedVideo"))
+                {
+                    Advertisement.Show("rewardedVideo");
+                }
+                PlayerPrefs.SetInt("adAccount", 0);
+            }
+            else
+            {
+                PlayerPrefs.SetInt("adAccount", PlayerPrefs.GetInt("adAccount") + 1);
+                ShowVideoAd();
+            }
+
         }
+        else
+        {
+            PlayerPrefs.SetInt("adAccount", 0);
+        }
+        
     }
 
     IEnumerator ShowBannerWhenReady()

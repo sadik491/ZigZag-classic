@@ -28,30 +28,32 @@ public class UnityAdManager : MonoBehaviour
 
     }
 
-    public void ShowVideoAd()
-    {
-        if (Advertisement.IsReady("video"))
-        {
-            Advertisement.Show("video");
-        }
-    }
 
     public void ShowRewardedVideoAd()
+    {
+
+        if (Advertisement.IsReady("rewardedVideo"))
+        {
+            Advertisement.Show("rewardedVideo");
+        }
+
+    }
+
+    public void ShowVideoAd()
     {
         if (PlayerPrefs.HasKey("adAccount"))
         {
             if (PlayerPrefs.GetInt ("adAccount") == 3)
             {
-                if (Advertisement.IsReady("rewardedVideo"))
+                if (Advertisement.IsReady("video"))
                 {
-                    Advertisement.Show("rewardedVideo");
+                    Advertisement.Show("video");
                 }
                 PlayerPrefs.SetInt("adAccount", 0);
             }
             else
             {
                 PlayerPrefs.SetInt("adAccount", PlayerPrefs.GetInt("adAccount") + 1);
-                ShowVideoAd();
             }
 
         }

@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     public GameObject gameOverPanel;
     public GameObject tapText;
     public GameObject scoreUpdate;
+    public GameObject playPause;
     public Text score;
     public Text welcomeHighScore;
     public Text gameOverHighScore;
@@ -27,24 +28,27 @@ public class UIManager : MonoBehaviour
     {
         tapText.SetActive(false);
         welcomePanel.GetComponent<Animator>().Play("WelcomePanal");
-        scoreUpdate.SetActive(true);
+        
+        Invoke("LateScoreShow", 1f);
+        
 
     }
 
     public void Welcome()
     {
         welcomeHighScore.text = PlayerPrefs.GetInt("highScore").ToString();
-        
+        //Invoke("LateShowVideo", 10f);
+
     }
 
     public void GameOver()
     {
         scoreUpdate.SetActive(false);
         score.text = PlayerPrefs.GetInt("score").ToString();
-        
+        welcomePanel.SetActive(false);
         gameOverHighScore.text = PlayerPrefs.GetInt("highScore").ToString();
         gameOverPanel.SetActive(true);
-        Invoke("LateShowRewardedVideo", 2f);
+        //Invoke("LateShowVideo", 1f);
     }
 
     public void Reset()
@@ -56,4 +60,16 @@ public class UIManager : MonoBehaviour
     {
         UnityAdManager.instance.ShowRewardedVideoAd();
     }
+
+    public void LateShowVideo()
+    {
+        UnityAdManager.instance.ShowVideoAd();
+    }
+
+    public void LateScoreShow()
+    {
+        scoreUpdate.SetActive(true);
+        playPause.SetActive(true);
+    }
+
 }

@@ -36,6 +36,7 @@ public class BallControl : MonoBehaviour
    
     void Update()
     {
+        //UIManager.instence.SoundCheck();
 
         if (!Physics.Raycast(transform.position, Vector3.down, 1f))
         {
@@ -45,28 +46,33 @@ public class BallControl : MonoBehaviour
             GameManager.instence.GameOver();
         }
 
-        
+        touchControl();
 
+
+
+
+    }
+    public void touchControl()
+    {
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
+
             if (!started)
             {
-                    rb.velocity = new Vector3(0, 0, speed * Time.deltaTime);
-                    started = true;
-                    GameManager.instence.StartGame();
+                rb.velocity = new Vector3(0, 0, speed * Time.deltaTime);
+                started = true;
+                GameManager.instence.StartGame();
             }
             if (touch.phase == TouchPhase.Began && !gameOver)
             {
-                    SwitchDirection();
+                SwitchDirection();
             }
 
-            
+
 
         }
-
     }
-
     private void SwitchDirection()
     {
         if (rb.velocity.z > 0)
@@ -82,8 +88,18 @@ public class BallControl : MonoBehaviour
     
     public void SoundOn(bool isOn)
     {
-        audioSource.enabled = isOn;
         soundButton = isOn;
+
+        if (isOn == true)
+        {
+            audioSource.enabled = true;
+            PlayerPrefs.SetInt("sound", 1);
+        }
+        else
+        {
+            audioSource.enabled = false;
+            PlayerPrefs.SetInt("sound", 0);
+        }
         
     }
 

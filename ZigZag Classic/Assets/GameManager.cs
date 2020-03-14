@@ -34,4 +34,16 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void playPause(bool isPlay)
+    {
+        if (isPlay == true)
+        {
+            Time.timeScale = 1; 
+        }
+        else
+        {
+            Time.timeScale = 0;
+        }
+    }
+
 }

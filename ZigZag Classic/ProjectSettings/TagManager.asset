@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ball
   - Daimond
+  - Button
   layers:
   - Default
   - TransparentFX

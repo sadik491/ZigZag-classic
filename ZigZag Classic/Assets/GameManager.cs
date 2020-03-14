@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
         
         ScoreManager.instence.StopScore();
         UIManager.instence.GameOver();
+       // UIManager.instence.Life();
         gameOver = true;
 
     }
@@ -43,6 +44,22 @@ public class GameManager : MonoBehaviour
         else
         {
             Time.timeScale = 0;
+        }
+    }
+
+    public void CheckInternet()
+    {
+        if (Application.internetReachability == NetworkReachability.NotReachable)
+        {
+            //No internet
+            
+        }
+        else
+        {
+            //internet
+
+           
+            
         }
     }
 

@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
+
 
 public class SoundCheck : MonoBehaviour
 {
@@ -18,5 +17,6 @@ public class SoundCheck : MonoBehaviour
         {
             toggle.isOn = false;
         }
+
     }
 }

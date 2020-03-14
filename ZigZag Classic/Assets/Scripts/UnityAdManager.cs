@@ -41,27 +41,31 @@ public class UnityAdManager : MonoBehaviour
 
     public void ShowVideoAd()
     {
+        
         if (PlayerPrefs.HasKey("adAccount"))
         {
-            if (PlayerPrefs.GetInt ("adAccount") == 3)
+            if (PlayerPrefs.GetInt ("adAccount") == 2)
             {
                 if (Advertisement.IsReady("video"))
                 {
                     Advertisement.Show("video");
+                    PlayerPrefs.SetInt("adAccount", 0);
                 }
-                PlayerPrefs.SetInt("adAccount", 0);
+                else
+                {
+                    PlayerPrefs.SetInt("adAccount", 2);
+                }
             }
             else
             {
                 PlayerPrefs.SetInt("adAccount", PlayerPrefs.GetInt("adAccount") + 1);
             }
-
         }
         else
         {
             PlayerPrefs.SetInt("adAccount", 0);
         }
-        
+        Time.timeScale = 0;
     }
 
     IEnumerator ShowBannerWhenReady()

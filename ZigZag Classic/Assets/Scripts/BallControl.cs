@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 
 public class BallControl : MonoBehaviour
@@ -14,7 +14,7 @@ public class BallControl : MonoBehaviour
     public AudioClip breakSound;
     public bool soundButton;
 
-
+    public GameObject Sound;
     public static BallControl instence;
 
     void Awake()
@@ -31,45 +31,55 @@ public class BallControl : MonoBehaviour
         soundButton = true;
         UIManager.instence.Welcome();
         GetComponent<MeshRenderer>().material.color = new Color(Random.value, Random.value, Random.value); ;
+        
     }
 
    
     void Update()
     {
-        //UIManager.instence.SoundCheck();
 
         if (!Physics.Raycast(transform.position, Vector3.down, 1f))
         {
+            //Time.timeScale = 0;
             gameOver = true;
             Camera.main.GetComponent<FollowCam>().gameOver = true;
             rb.velocity = new Vector3(0, -25f, 0);
             GameManager.instence.GameOver();
         }
-
+        
         touchControl();
-
-
-
 
     }
     public void touchControl()
     {
         if (Input.touchCount > 0)
         {
-            Touch touch = Input.GetTouch(0);
+            //Touch touch = Input.GetTouch(0);
 
-            if (!started)
+            foreach ( Touch touch in Input.touches)
             {
-                rb.velocity = new Vector3(0, 0, speed * Time.deltaTime);
-                started = true;
-                GameManager.instence.StartGame();
-            }
-            if (touch.phase == TouchPhase.Began && !gameOver)
-            {
-                SwitchDirection();
-            }
+                int id = touch.fingerId;
+                if (EventSystem.current.IsPointerOverGameObject(id))
+                {
+                    return;
+                }
+                else
+                {
+                    
+                    if (!started)
+                    {
+                        rb.velocity = new Vector3(0, 0, speed * Time.deltaTime);
+                        started = true;
+                        GameManager.instence.StartGame();
+                    }
+                    if (touch.phase == TouchPhase.Began && !gameOver)
+                    {
+                        SwitchDirection();
+                    }
+                }
 
-
+                
+            }
 
         }
     }
@@ -111,8 +121,6 @@ public class BallControl : MonoBehaviour
             {
                 AudioSource.PlayClipAtPoint(breakSound, Camera.main.transform.position);
             }
-            
-            
             
             GameObject part = Instantiate(partical, col.transform.position, Quaternion.identity);
             Destroy(col.gameObject);

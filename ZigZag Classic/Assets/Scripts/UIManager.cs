@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     public GameObject tapText;
     public GameObject scoreUpdate;
     public GameObject playPause;
+    public GameObject life;
     public Text score;
     public Text welcomeHighScore;
     public Text gameOverHighScore;
@@ -37,7 +38,6 @@ public class UIManager : MonoBehaviour
     public void Welcome()
     {
         welcomeHighScore.text = PlayerPrefs.GetInt("highScore").ToString();
-        //Invoke("LateShowVideo", 10f);
 
     }
 
@@ -48,12 +48,31 @@ public class UIManager : MonoBehaviour
         welcomePanel.SetActive(false);
         gameOverHighScore.text = PlayerPrefs.GetInt("highScore").ToString();
         gameOverPanel.SetActive(true);
-        //Invoke("LateShowVideo", 1f);
+        playPause.SetActive(false);
+        GameManager.instence.gameOver = true;
+        Invoke("LateShowVideo", 1f);
     }
 
     public void Reset()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(0);
+    }
+
+    public void Life()
+    {
+        life.SetActive(true);
+    }
+    public void LifeButton()
+    {
+        life.SetActive(true);
+    }
+    public void NoThanks()
+    {
+        Time.timeScale = 1;
+        life.SetActive(false);
+        GameOver();
+        
     }
 
     public void LateShowRewardedVideo()

@@ -4,7 +4,7 @@ using UnityEngine.Advertisements;
 
 public class UnityAdManager : MonoBehaviour
 {
-    string gameId = "3486957";
+    string gameId = "3731917";
     public static UnityAdManager instance;
 
     void Awake()
@@ -72,7 +72,7 @@ public class UnityAdManager : MonoBehaviour
     {
         while (!Advertisement.IsReady("bannerPlacement"))
         {
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.1f);
         }
         Advertisement.Banner.Show("bannerPlacement");
     }

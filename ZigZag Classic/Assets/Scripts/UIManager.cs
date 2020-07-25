@@ -50,7 +50,7 @@ public class UIManager : MonoBehaviour
         gameOverPanel.SetActive(true);
         playPause.SetActive(false);
         GameManager.instence.gameOver = true;
-        Invoke("LateShowVideo", 1f);
+        Invoke("LateShowVideo", .5f);
     }
 
     public void Reset()

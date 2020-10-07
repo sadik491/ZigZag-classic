@@ -23,7 +23,7 @@ public class FloorCreator : MonoBehaviour
 
     public void StartRandomFloor()
     {
-        InvokeRepeating("RandomFloor", 3f, 1.2f); 
+        InvokeRepeating("RandomFloor", .3f, .3f); 
     }
 
     void Update()

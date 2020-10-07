@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 242740107985253570}
-  speed: 500
+  speed: 10
   partical: {fileID: 7229819473075181718, guid: ec435e0a86ec43c4ba613ad7f5fa5a6f,
     type: 3}
   audioSource: {fileID: 2876423044010028294}

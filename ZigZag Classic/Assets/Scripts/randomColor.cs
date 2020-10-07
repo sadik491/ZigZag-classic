@@ -7,4 +7,6 @@ public class randomColor : MonoBehaviour
     {
        GetComponent<MeshRenderer>().material.color = new Color(Random.value, Random.value, Random.value); ;
     }
+
+    
 }

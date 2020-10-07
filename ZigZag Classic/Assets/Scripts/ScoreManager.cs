@@ -52,4 +52,8 @@ public class ScoreManager : MonoBehaviour
             PlayerPrefs.SetInt("highScore", score);
         }
     }
+
+
+
+
 }

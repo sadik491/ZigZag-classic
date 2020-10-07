@@ -17,6 +17,9 @@ public class BallControl : MonoBehaviour
     public GameObject Sound;
     public static BallControl instence;
 
+
+
+
     void Awake()
     {
         if (instence == null)
@@ -68,7 +71,7 @@ public class BallControl : MonoBehaviour
                     
                     if (!started)
                     {
-                        rb.velocity = new Vector3(0, 0, speed * Time.deltaTime);
+                        rb.velocity = new Vector3(0, 0, speed);
                         started = true;
                         GameManager.instence.StartGame();
                     }
@@ -87,11 +90,11 @@ public class BallControl : MonoBehaviour
     {
         if (rb.velocity.z > 0)
         {
-            rb.velocity = new Vector3(speed * Time.deltaTime, 0, 0);
+            rb.velocity = new Vector3(speed, 0, 0);
         }
         else if (rb.velocity.x > 0)
         {
-            rb.velocity = new Vector3(0, 0, speed * Time.deltaTime);
+            rb.velocity = new Vector3(0, 0, speed);
         }
     }
 
@@ -117,6 +120,8 @@ public class BallControl : MonoBehaviour
     {
         if (col.gameObject.tag == "Daimond")
         {
+
+
             if (soundButton == true)
             {
                 AudioSource.PlayClipAtPoint(breakSound, Camera.main.transform.position);

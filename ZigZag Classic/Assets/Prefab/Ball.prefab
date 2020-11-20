@@ -127,8 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 242740107985253570}
   speed: 10
-  partical: {fileID: 7229819473075181718, guid: ec435e0a86ec43c4ba613ad7f5fa5a6f,
-    type: 3}
+  partical: {fileID: 1845955007268882, guid: 67a684e320da6e7439421a07e3fa265c, type: 3}
   audioSource: {fileID: 2876423044010028294}
   breakSound: {fileID: 8300000, guid: a37d2702516ca024f86a7ff6bacb7f97, type: 3}
   soundButton: 0

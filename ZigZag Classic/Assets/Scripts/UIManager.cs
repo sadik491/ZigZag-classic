@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour
     public Text score;
     public Text welcomeHighScore;
     public Text gameOverHighScore;
+    public GameObject floor;
 
 
     void Awake()
@@ -31,7 +32,8 @@ public class UIManager : MonoBehaviour
         welcomePanel.GetComponent<Animator>().Play("WelcomePanal");
         
         Invoke("LateScoreShow", 1f);
-        
+        Destroy(floor, 5f);
+
 
     }
 

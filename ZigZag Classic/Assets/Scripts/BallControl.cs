@@ -125,6 +125,7 @@ public class BallControl : MonoBehaviour
             if (soundButton == true)
             {
                 AudioSource.PlayClipAtPoint(breakSound, Camera.main.transform.position);
+                
             }
             
             GameObject part = Instantiate(partical, col.transform.position, Quaternion.identity);

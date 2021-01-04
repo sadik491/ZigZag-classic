@@ -79,12 +79,14 @@ public class UIManager : MonoBehaviour
 
     public void LateShowRewardedVideo()
     {
-        UnityAdManager.instance.ShowRewardedVideoAd();
+        AdMobManager.instance.ShowRewardedAd();
+        //UnityAdManager.instance.ShowRewardedVideoAd();
     }
 
     public void LateShowVideo()
     {
-        UnityAdManager.instance.ShowVideoAd();
+        AdMobManager.instance.ShowInterstitialAd();
+        //UnityAdManager.instance.ShowVideoAd();
     }
 
     public void LateScoreShow()

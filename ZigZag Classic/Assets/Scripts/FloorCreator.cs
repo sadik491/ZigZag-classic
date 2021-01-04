@@ -17,8 +17,7 @@ public class FloorCreator : MonoBehaviour
         {
             RandomFloor();
         }
-
-        
+ 
     }
 
     public void StartRandomFloor()

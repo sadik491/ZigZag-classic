@@ -4,7 +4,7 @@ using UnityEngine.Advertisements;
 
 public class UnityAdManager : MonoBehaviour
 {
-    string gameId = "3853979";
+    string gameId = "3909745";
     public static UnityAdManager instance;
 
     void Awake()

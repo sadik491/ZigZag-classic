@@ -8,7 +8,6 @@ public class ScoreManager : MonoBehaviour
     public int highScore;
     public Text scoreUpdateText;
 
-
     void Awake()
     {
         if (instence == null)
@@ -22,7 +21,6 @@ public class ScoreManager : MonoBehaviour
         PlayerPrefs.SetInt("score", score);
     }
     
-
     public void IncrementScore()
     {
         score += 1;

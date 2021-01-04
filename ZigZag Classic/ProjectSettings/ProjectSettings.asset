@@ -125,7 +125,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 0.1
+  bundleVersion: 0.2
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -171,9 +171,9 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.xoxgames.zigzagclassic
   buildNumber: {}
-  AndroidBundleVersionCode: 1
+  AndroidBundleVersionCode: 2
   AndroidMinSdkVersion: 19
-  AndroidTargetSdkVersion: 30
+  AndroidTargetSdkVersion: 29
   AndroidPreferredInstallLocation: 0
   aotOptions: 
   stripEngineCode: 1
@@ -806,10 +806,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 9b8600eb-ab70-4ab4-88a4-012d8940f957
+  cloudProjectId: d9548686-ff19-48cb-8d31-f4a257ff3acc
   framebufferDepthMemorylessMode: 0
   projectName: ZigZag Classic
-  organizationId: sadik491
+  organizationId: sk-extreme-games
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

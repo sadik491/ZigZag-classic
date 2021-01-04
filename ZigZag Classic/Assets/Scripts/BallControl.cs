@@ -52,6 +52,7 @@ public class BallControl : MonoBehaviour
         
         touchControl();
 
+       
     }
     public void touchControl()
     {
